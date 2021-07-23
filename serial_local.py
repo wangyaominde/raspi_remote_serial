@@ -6,8 +6,7 @@ def get_all_serial_port():
     :return:
     """
     port_list = []
-    for port in list(serial.tools.list_ports.comports()):
-        port_list.append(port[0])
+    port_list = serial.tools.list_ports.comports()
     return port_list
 
 print(get_all_serial_port())
