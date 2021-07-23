@@ -1,1 +1,2 @@
-# this project use python and raspberry-pi achieve remote send/receive serial data
+# 用途
+使用python和树莓派实现远程收发串口数据
