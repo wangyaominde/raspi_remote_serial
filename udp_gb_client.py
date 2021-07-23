@@ -15,3 +15,7 @@ while True:
     data, address = s.recvfrom(65535)
     if data.startswith(b'raspi_remote_serial use port = '):
         print('Server: ', address, data)
+        tcp_ser_addr=address
+        tcp_ser_port=data[:-4]
+        print('tcp_ser_addr=',tcp_ser_addr)
+        print('tcp_ser_port=',tcp_ser_port)
