@@ -9,4 +9,5 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 PORT = 1060
 
 network = '<broadcast>'
-s.sendto('this program for udp get ip'.encode('utf-8'), (network, PORT))
+tcp_port = 8888
+s.sendto(('raspi_remote_serial use port = '+str(tcp_port)).encode('utf-8'), (network, PORT))

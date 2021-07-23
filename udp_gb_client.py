@@ -13,4 +13,5 @@ print('Listening for broadcast at ', s.getsockname())
 
 while True:
     data, address = s.recvfrom(65535)
-    print('Server received from {}:{}'.format(address, data.decode('utf-8')))
+    if data.startswith(b'raspi_remote_serial use port = '):
+        print('Server: ', address, data)
