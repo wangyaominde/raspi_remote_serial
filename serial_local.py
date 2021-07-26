@@ -16,7 +16,7 @@ def get_data_from_serial(ser_port, baudrate,timeout):
     ser.close()
     return data
 
-def send_data_to_serial(ser_port, baudrate, data):
+def write_data_to_serial(ser_port, baudrate, data):
     """将数据发送到串口"""
     ser = serial.Serial(ser_port, baudrate)
     ser.write(data)
