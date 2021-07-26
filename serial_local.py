@@ -9,3 +9,10 @@ def get_all_serial_port():
     return [port[0] for port in serial.tools.list_ports.comports()]
 
 
+def get_data_from_serial(ser_port, baudrate,timeout):
+    """从串口获取数据,返回bytes"""
+    ser = serial.Serial(ser_port, baudrate, timeout=timeout)
+    data = ser.read_all()
+    ser.close()
+    return data
+
