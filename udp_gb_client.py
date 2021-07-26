@@ -16,6 +16,10 @@ while True:
     if data.startswith(b'raspi_remote_serial use port = '):
         print('Server: ', address, data)
         tcp_ser_addr=address
-        tcp_ser_port=data[:-4]
-        print('tcp_ser_addr=',tcp_ser_addr)
-        print('tcp_ser_port=',tcp_ser_port)
+        tcp_ser_port=data[-4:]
+    break
+
+tcp_ser_addr=tcp_ser_addr[0]
+tcp_ser_port=int(tcp_ser_port)
+print('tcp_ser_addr=',tcp_ser_addr)
+print('tcp_ser_port=',tcp_ser_port)
