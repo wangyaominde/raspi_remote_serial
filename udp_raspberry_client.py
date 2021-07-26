@@ -9,8 +9,6 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 PORT = 1060
 
 s.bind(('', PORT))
-print('Listening for broadcast at ', s.getsockname())
-
 
 def get_trans_port_address():
     while True:
