@@ -27,3 +27,4 @@ def get_tcp_port_address():
     #print('tcp_ser_port=',tcp_ser_port)
     return tcp_ser_addr,tcp_ser_port
 
+print(get_tcp_port_address())
