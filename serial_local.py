@@ -9,4 +9,3 @@ def get_all_serial_port():
     return [port[0] for port in serial.tools.list_ports.comports()]
 
 
-print(get_all_serial_port())

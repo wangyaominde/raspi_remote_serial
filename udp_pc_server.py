@@ -7,7 +7,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
 PORT = 1060
-
-network = '<broadcast>'
-tcp_port = 8888
-s.sendto(('raspi_remote_serial use port = '+str(tcp_port)).encode('utf-8'), (network, PORT))
+def set_port_address(port_num):
+    network = '<broadcast>'
+    port_n = 8888
+    s.sendto(('raspi_remote_serial use port = '+str(port_n)).encode('utf-8'), (network, PORT))
