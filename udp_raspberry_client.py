@@ -14,7 +14,6 @@ def get_trans_port_address():
     while True:
         data, address = s.recvfrom(65535)
         if data.startswith(b'raspi_remote_serial use port = '):
-            print('Server: ', address, data)
             udp_ser_address=address
             udp_ser_port=data[-4:]
         break
