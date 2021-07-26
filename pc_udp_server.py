@@ -1,6 +1,6 @@
 import udp_pc_server
 import socket
-
+import json
 
 udp_port=8888
 
@@ -12,7 +12,7 @@ def udp_server_main(port_number):
     udp_server_socket.bind(('', port_number))
     while True:
         data, addr = udp_server_socket.recvfrom(1024)
-        print(data)
+        print(json.loads(data.decode()))
 
 udp_server_main(udp_port)
     
