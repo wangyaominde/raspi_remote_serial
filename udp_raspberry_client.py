@@ -27,6 +27,6 @@ def get_trans_port_address():
 
 def send_data(udp_ser_address,udp_ser_port,data):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.sendto(data, (udp_ser_address, udp_ser_port))
+    s.sendto(data.encode('utf-8'), (udp_ser_address, udp_ser_port))
     s.close()
     
