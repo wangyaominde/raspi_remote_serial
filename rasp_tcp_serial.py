@@ -1,9 +1,6 @@
 import serial_local
 import udp_gb_client
-import tcp_client
 
-tcp_addr,tcp_port = udp_gb_client.get_tcp_port_address()
-print("tcp_addr:",tcp_addr)
-print("tcp_port:",tcp_port)
+udp_addr, udp_port = udp_gb_client.get_udp_info()
 
-tcp_client.connect_tcp_server(tcp_addr,int(tcp_port))
+print("UDP: %s:%d" % (udp_addr, udp_port))

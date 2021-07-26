@@ -12,19 +12,17 @@ s.bind(('', PORT))
 print('Listening for broadcast at ', s.getsockname())
 
 
-def get_tcp_port_address():
+def get_trans_port_address():
     while True:
         data, address = s.recvfrom(65535)
         if data.startswith(b'raspi_remote_serial use port = '):
             print('Server: ', address, data)
-            tcp_ser_addr=address
-            tcp_ser_port=data[-4:]
+            udp_ser_address=address
+            udp_ser_port=data[-4:]
         break
 
-    tcp_ser_addr=tcp_ser_addr[0]
-    tcp_ser_port=int(tcp_ser_port)
-    #print('tcp_ser_addr=',tcp_ser_addr)
-    #print('tcp_ser_port=',tcp_ser_port)
-    return tcp_ser_addr,tcp_ser_port
-
-print(get_tcp_port_address())
+    udp_ser_address=udp_ser_address[0]
+    udp_ser_port=int(udp_ser_port)
+    #print('udp_ser_address=',udp_ser_address)
+    #print('udp_ser_port=',udp_ser_port)
+    return udp_ser_address,udp_ser_port
