@@ -19,3 +19,4 @@ def write_data_to_serial(ser_port,ser_baud,ser_timeout,ser_data):
     """write data to serial from udp server"""
     serial_local.write_data_to_serial(ser_port=ser_port,ser_baud=ser_baud,ser_timeout=ser_timeout,ser_data=ser_data)
 
+send_serial_list()
