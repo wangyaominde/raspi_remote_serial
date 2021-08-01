@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import serial_local
 import udp_raspberry_client
 import json
@@ -5,10 +7,11 @@ import json
 udp_addr, udp_port = udp_raspberry_client.get_trans_port_address()
 
 print("UDP: %s:%d" % (udp_addr, udp_port))
-def send_serial_list():
+
+def send_serial_list(udp_addr,udp_port):
     ser_list=serial_local.get_all_serial_port()
-    print(ser_list)
     udp_raspberry_client.send_data(udp_ser_address=udp_addr,udp_ser_port=udp_port,data=json.dumps(ser_list))
+    print("send serial list to %s:%d" % (udp_addr,udp_port))
 
 def get_data_from_serial(ser_port,ser_baud,ser_timeout):
     """get data from serial to udp server"""
@@ -20,4 +23,6 @@ def write_data_to_serial(ser_port,ser_baud,ser_timeout,ser_data):
     """write data to serial from udp server"""
     serial_local.write_data_to_serial(ser_port=ser_port,ser_baud=ser_baud,ser_timeout=ser_timeout,ser_data=ser_data)
 
-send_serial_list()
+
+for i in range(0,10):
+    send_serial_list(udp_addr=udp_addr,udp_port=udp_port)

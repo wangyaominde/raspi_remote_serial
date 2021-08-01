@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # udp_gb_client.py
 '''客户端（UDP协议局域网广播）'''
 
