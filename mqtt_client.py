@@ -23,11 +23,11 @@ def mqtt_sub():
     client.loop_stop()
     client.disconnect()
 
-def mqtt_send(message):
+def mqtt_send(topic,message):
     """mqtt发布"""
     client = mqtt.Client()
     client.connect("mqtt.wangyaomin.com", 1883)
-    client.publish("/test/test_topic", message)
+    client.publish(topic,message)
     client.loop_start()
     client.loop_stop()
     client.disconnect()
