@@ -12,14 +12,13 @@
 import paho.mqtt.client as mqtt
 import time
 
-def mqtt_sub():
+def mqtt_sub(topic):
     """mqtt订阅"""
     client = mqtt.Client()
     client.connect("mqtt.wangyaomin.com", 1883)
-    client.subscribe("/test/test_topic")
+    client.subscribe(topic)
     client.loop_start()
-    while True:
-        time.sleep(1)
+    print(client.on_message)
     client.loop_stop()
     client.disconnect()
 
