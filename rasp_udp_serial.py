@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import serial_local
-import udp_raspberry_client
 import json
 
 udp_addr, udp_port = udp_raspberry_client.get_trans_port_address()
