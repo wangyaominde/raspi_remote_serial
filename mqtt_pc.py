@@ -1,12 +1,13 @@
 import paho.mqtt.client as mqtt
+import json
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe("test")
+    client.subscribe("serial_port_number")
 
 # 从服务器接受到消息后回调此函数
 def on_message(client, userdata, msg):
-    print("主题:"+msg.topic+" 消息:"+str(msg.payload))
+    print(json.loads(msg.payload.decode("utf-8")))
 
     
 client = mqtt.Client()
