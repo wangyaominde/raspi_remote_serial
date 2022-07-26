@@ -2,7 +2,7 @@
 
 import serial
 
-def get_all_serial_port():
+def get_all_serial_ports():
     """
     获取当前系统所有可用串口
     :return:
@@ -23,3 +23,4 @@ def write_data_to_serial(ser_port, baudrate, data):
     ser = serial.Serial(ser_port, baudrate)
     ser.write(data)
     ser.close()
+
