@@ -1,7 +1,14 @@
 from serial.tools import list_ports
 
-if __name__ == '__main__':
-    prots = list_ports.comports()
-    for port in prots:
-        print(port)
-    print('\n')
+def get_serial_port():
+    """
+    Returns the serial port of the raspberry pi
+    """
+    ports = list_ports.comports()
+    if len(ports) == 0:
+        return None
+    else:
+        return ports
+
+
+
